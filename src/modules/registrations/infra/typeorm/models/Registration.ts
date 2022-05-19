@@ -26,9 +26,6 @@ class Registration implements IRegistration {
   data_nascimento: string;
 
   @Column()
-  dados_pessoais: string;
-
-  @Column()
   idade: string;
 
   @Column()

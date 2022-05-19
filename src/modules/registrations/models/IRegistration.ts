@@ -4,7 +4,6 @@ interface IRegistration {
   nome_cracha: string;
   email: string;
   data_nascimento: string;
-  dados_pessoais: string;
   idade: string;
   sexo: string;
   genero: string;
