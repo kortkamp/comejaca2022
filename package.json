@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node dist/src/shared/infra/http/server.js",
     "typeorm": "MIGRATION=TRUE node ./node_modules/typeorm/cli.js -d ./dist/src/shared/infra/typeorm/index.js",
+    "migration:create": "MIGRATION=TRUE ts-node-dev -r tsconfig-paths/register  ./node_modules/typeorm/cli.js migration:create",
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules ./src/shared/infra/http/server.ts",
     "build": "yarn babel src --extensions \".js,.ts\" --out-dir dist/src --copy-files --no-copy-ignored",
     "test": "jest",
