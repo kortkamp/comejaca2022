@@ -1,3 +1,4 @@
+import { Registration } from '@modules/registrations/infra/typeorm/models/Registration';
 import { Role } from '@modules/roles/infra/typeorm/models/Role';
 import { User } from '@modules/users/infra/typeorm/models/User';
 import { DataSource, DataSourceOptions } from 'typeorm';
@@ -21,7 +22,7 @@ const dataSourceOptions: DataSourceOptions = {
   //   process.env.NODE_ENV === 'test'
   //     ? 'template_test'
   //     : process.env.POSTGRES_DB_DATABASE,
-  entities: [User, Role],
+  entities: [User, Role, Registration],
   migrations: [`./dist/src/shared/infra/typeorm/migrations/*.js`],
 };
 

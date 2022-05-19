@@ -1,5 +1,7 @@
 import '@shared/container/providers';
 
+import { RegistrationsRepository } from '@modules/registrations/infra/typeorm/repositories/RegistrationsRepository';
+import { IRegistrationsRepository } from '@modules/registrations/repositories/IRegistrationsRepository';
 import { RolesRepository } from '@modules/roles/infra/typeorm/repositories/RolesRepository';
 import { IRolesRepository } from '@modules/roles/repositories/IRolesRepository';
 import { UsersRepository } from '@modules/users/infra/typeorm/repositories/UsersRepository';
@@ -21,4 +23,9 @@ container.registerSingleton<IUserTokensRepository>(
 container.registerSingleton<IRolesRepository>(
   'RolesRepository',
   RolesRepository,
+);
+
+container.registerSingleton<IRegistrationsRepository>(
+  'RegistrationsRepository',
+  RegistrationsRepository,
 );
