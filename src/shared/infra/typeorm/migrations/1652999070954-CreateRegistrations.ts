@@ -2,6 +2,9 @@ import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export class CreateRegistrations1652999070954 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(
+      'CREATE SEQUENCE registration_number_id_seq START 1;',
+    );
     await queryRunner.createTable(
       new Table({
         name: 'registrations',
@@ -12,10 +15,10 @@ export class CreateRegistrations1652999070954 implements MigrationInterface {
             isPrimary: true,
           },
           {
-            name: 'name',
-            type: 'varchar(255)',
+            name: 'number_id',
+            type: 'integer',
+            default: "nextval('registration_number_id_seq')",
           },
-
           {
             name: 'nome_completo',
             type: 'varchar(255)',
@@ -87,6 +90,12 @@ export class CreateRegistrations1652999070954 implements MigrationInterface {
           {
             name: 'comissao',
             type: 'varchar(255)',
+            isNullable: true,
+          },
+          {
+            name: 'gfe',
+            type: 'varchar(255)',
+            isNullable: true,
           },
           {
             name: 'incluir_camisa',
@@ -95,13 +104,36 @@ export class CreateRegistrations1652999070954 implements MigrationInterface {
           {
             name: 'tamanho_camisa',
             type: 'varchar(255)',
+            isNullable: true,
           },
-
           {
-            name: 'instituicao',
+            name: 'tempo_instituicao',
             type: 'varchar(255)',
           },
-
+          {
+            name: 'nome_instituicao',
+            type: 'varchar(255)',
+          },
+          {
+            name: 'endereco_instituicao',
+            type: 'varchar(255)',
+          },
+          {
+            name: 'cep_instituicao',
+            type: 'varchar(255)',
+          },
+          {
+            name: 'cidade_instituicao',
+            type: 'varchar(255)',
+          },
+          {
+            name: 'bairro_instituicao',
+            type: 'varchar(255)',
+          },
+          {
+            name: 'telefone_instituicao',
+            type: 'varchar(255)',
+          },
           {
             name: 'created_at',
             type: 'timestamp with time zone',
@@ -119,5 +151,6 @@ export class CreateRegistrations1652999070954 implements MigrationInterface {
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropTable('registrations');
+    await queryRunner.query('DROP SEQUENCE registration_number_id_seq');
   }
 }

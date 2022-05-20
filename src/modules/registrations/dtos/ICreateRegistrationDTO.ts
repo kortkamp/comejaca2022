@@ -3,7 +3,6 @@ interface ICreateRegistrationDTO {
   nome_cracha: string;
   email: string;
   data_nascimento: string;
-  dados_pessoais: string;
   idade: string;
   sexo: string;
   genero: string;
@@ -12,7 +11,6 @@ interface ICreateRegistrationDTO {
   endereco: string;
   estado: string;
   cidade: string;
-
   bairro: string;
   numero: string;
 
@@ -23,7 +21,12 @@ interface ICreateRegistrationDTO {
   incluir_camisa: 'S' | 'N';
   tamanho_camisa: string;
 
-  instituicao: string;
+  tempo_instituicao: string;
+  nome_instituicao: string;
+  endereco_instituicao: string;
+  cep_instituicao: string;
+  cidade_instituicao: string;
+  bairro_instituicao: string;
 }
 
 export { ICreateRegistrationDTO };

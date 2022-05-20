@@ -8,6 +8,7 @@ interface IRegistration {
   sexo: string;
   genero: string;
   telefone: string;
+
   cep: string;
   endereco: string;
   estado: string;
@@ -20,10 +21,17 @@ interface IRegistration {
 
   tipo: string;
   comissao: string;
+  gfe: string;
   incluir_camisa: 'S' | 'N';
-  tamanho_camisa: string;
+  tamanho_camisa: string | undefined;
 
-  instituicao: string;
+  tempo_instituicao: string;
+  nome_instituicao: string;
+  endereco_instituicao: string;
+  cep_instituicao: string;
+  cidade_instituicao: string;
+  bairro_instituicao: string;
+  telefone_instituicao: string;
 
   created_at: Date;
   updated_at: Date;
