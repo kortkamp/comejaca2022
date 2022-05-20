@@ -28,7 +28,7 @@ if (process.env.STORAGE_DRIVER === 'disk') {
 
 app.use('/', express.static(path.join(__dirname, '..', '..', '..', 'public')));
 
-app.use(routes);
+app.use('/api/', routes);
 
 app.use(errorHandling);
 
