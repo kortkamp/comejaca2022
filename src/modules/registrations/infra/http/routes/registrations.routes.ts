@@ -1,12 +1,17 @@
 import { Router } from 'express';
 
 import { RegistrationsController } from '../controllers/RegistrationsController';
+import { createRegistrationValidate } from '../validations/registrations.validation';
 
 const registrationsRoutes = Router();
 
 const registrationsController = new RegistrationsController();
 
-registrationsRoutes.post('/', registrationsController.create);
+registrationsRoutes.post(
+  '/',
+  createRegistrationValidate,
+  registrationsController.create,
+);
 
 registrationsRoutes.get('/', registrationsController.index);
 

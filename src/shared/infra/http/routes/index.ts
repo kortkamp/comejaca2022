@@ -1,4 +1,4 @@
-import { registrationsRoutes } from '@modules/registrations/infra/http/routes/roles.routes';
+import { registrationsRoutes } from '@modules/registrations/infra/http/routes/registrations.routes';
 import { rolesRoutes } from '@modules/roles/infra/http/routes/roles.routes';
 import { sessionsRoutes } from '@modules/sessions/infra/http/routes/sessions.routes';
 import { usersRoutes } from '@modules/users/infra/http/routes/users.routes';
