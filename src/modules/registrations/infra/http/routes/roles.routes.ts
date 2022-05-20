@@ -14,4 +14,6 @@ registrationsRoutes.put('/:id', registrationsController.update);
 
 registrationsRoutes.get('/:id', registrationsController.show);
 
+registrationsRoutes.get('/print/:id', registrationsController.print);
+
 export { registrationsRoutes };

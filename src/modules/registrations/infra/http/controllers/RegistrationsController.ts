@@ -1,5 +1,6 @@
 import { CreateRegistrationService } from '@modules/registrations/services/CreateRegistrationService';
 import { ListRegistrationsService } from '@modules/registrations/services/ListRegistrationsService';
+import { PrintFichaService } from '@modules/registrations/services/PrintFichaService';
 import { ShowRegistrationService } from '@modules/registrations/services/ShowRegistrationService';
 import { UpdateRegistrationService } from '@modules/registrations/services/UpdateRegistrationService';
 import { Request, Response } from 'express';
@@ -52,9 +53,19 @@ class RegistrationsController {
 
     const registrationId = request.params.id;
 
-    const role = await showRegistration.execute({ registrationId });
+    const registration = await showRegistration.execute({ registrationId });
 
-    return response.status(200).json({ success: true, role });
+    return response.status(200).json({ success: true, registration });
+  }
+
+  public async print(request: Request, response: Response): Promise<Response> {
+    const printFicha = container.resolve(PrintFichaService);
+
+    const registrationId = request.params.id;
+
+    const ficha = await printFicha.execute({ registrationId });
+
+    return response.status(200).send(ficha);
   }
 }
 
