@@ -111,7 +111,7 @@ async function fillForm() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
 
-  const res = await fetch(`${domain}/api/inscricoes/${id}`, {
+  const res = await fetch(`${domain}/api/registrations/${id}`, {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -120,56 +120,59 @@ async function fillForm() {
 
   const inscricao = JSON.parse(await res.text());
 
-  setValue('nomecompleto', nome_completo);
-  setValue('nome_cracha', nome_cracha);
-  setValue('email', email);
-  setValue('data_nascimento', data_nascimento);
-  setValue('idade', idade);
-  setValue('sexo', sexo);
-  setValue('genero', genero);
-  setValue('telefone', telefone);
+  setValue('nomecompleto', inscricao.registration.nome_completo);
+  setValue('nome_cracha', inscricao.registration.nome_cracha);
+  setValue('email', inscricao.registration.email);
+  setValue('data_nascimento', inscricao.registration.data_nascimento);
+  setValue('idade', inscricao.registration.idade);
+  setValue('sexo', inscricao.registration.sexo);
+  setValue('genero', inscricao.registration.genero);
+  setValue('telefone', inscricao.registration.telefone);
 
-  setValue('CEP', cep);
-  setValue('endereco', endereco);
-  setValue('estado', estado);
-  setValue('cidade', cidade);
-  setValue('bairro', bairro);
-  setValue('numero', numero);
+  setValue('CEP', inscricao.registration.cep);
+  setValue('endereco', inscricao.registration.endereco);
+  setValue('estado', inscricao.registration.estado);
+  setValue('cidade', inscricao.registration.cidade);
+  setValue('bairro', inscricao.registration.bairro);
+  setValue('numero', inscricao.registration.numero);
 
-  setValue('tipo_participacao', tipo);
-  setValue('comissao', incluir_camisa);
-  setValue('camisa', incluir_camisa);
-  setValue('tamanho_camisa', tamanho_camisa);
+  setValue('tipo_participacao', inscricao.registration.tipo);
+  setValue('comissao', inscricao.registration.incluir_camisa);
+  setValue('camisa', inscricao.registration.incluir_camisa);
+  setValue('tamanho_camisa', inscricao.registration.tamanho_camisa);
 
   // {
   //     nome: "Já participou de outras comejacas ?",
   //     resposta: getValue('comejacas'),
   //     quantas: getValue('quantas')
   // },
-  setValue('comejacas', inscricao.questionario[0].resposta);
-  setValue('quantas', inscricao.questionario[0].quantas);
+  setValue('comejacas', inscricao.registration.questionario[0].resposta);
+  setValue('quantas', inscricao.registration.questionario[0].quantas);
 
-  setValue('alergia', inscricao.questionario[1].resposta);
-  setValue('quais_alergia', inscricao.questionario[1].quais);
+  setValue('alergia', inscricao.registration.questionario[1].resposta);
+  setValue('quais_alergia', inscricao.registration.questionario[1].quais);
 
-  setValue('doenca', inscricao.questionario[2].resposta);
-  setValue('quais_doenca', inscricao.questionario[2].quais);
+  setValue('doenca', inscricao.registration.questionario[2].resposta);
+  setValue('quais_doenca', inscricao.registration.questionario[2].quais);
 
-  setValue('medicacao', inscricao.questionario[3].resposta);
-  setValue('quais_medicacao', inscricao.questionario[3].quais);
+  setValue('medicacao', inscricao.registration.questionario[3].resposta);
+  setValue('quais_medicacao', inscricao.registration.questionario[3].quais);
 
-  setValue('vegetariano', inscricao.questionario[4].resposta);
-  setValue('quais_vegetariano', inscricao.questionario[4].quais);
+  setValue('vegetariano', inscricao.registration.questionario[4].resposta);
+  setValue('quais_vegetariano', inscricao.registration.questionario[4].quais);
 
-  setValue('plano_de_saude', inscricao.questionario[5].resposta);
-  setValue('telefone_plano', inscricao.questionario[5].telefone_plano);
+  setValue('plano_de_saude', inscricao.registration.questionario[5].resposta);
+  setValue(
+    'telefone_plano',
+    inscricao.registration.questionario[5].telefone_plano,
+  );
 
-  setValue('tempo_instituicao', inscricao.instituicao.tempo_instituicao);
-  setValue('instituicao_espirita', inscricao.instituicao.nome);
-  setValue('cep_centro', inscricao.instituicao.endereco.cep);
-  setValue('endereco_c', inscricao.instituicao.endereco.endereco);
-  setValue('cidade_c', inscricao.instituicao.endereco.cidade);
-  setValue('bairro_c', inscricao.instituicao.endereco.bairro);
+  setValue('tempo_instituicao', inscricao.registration.tempo_instituicao);
+  setValue('instituicao_espirita', inscricao.registration.nome_instituicao);
+  setValue('cep_centro', inscricao.registration.cep_instituicao);
+  setValue('endereco_c', inscricao.registration.endereco_instituicao);
+  setValue('cidade_c', inscricao.registration.cidade_instituicao);
+  setValue('bairro_c', inscricao.registration.bairro_instituicao);
 }
 
 function updateForm(event) {
