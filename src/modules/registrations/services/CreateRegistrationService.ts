@@ -32,7 +32,7 @@ class CreateRegistrationService {
       'confirmation_mail.hbs',
     );
 
-    const linkUpdate = `${process.env.MAIN_URL}/atualizacao.html?id=${registration.id}`;
+    const linkUpdate = `${process.env.MAIN_URL}/atualizacao_inscricao.html?id=${registration.id}`;
     const linkPrint = `${process.env.MAIN_URL}/api/registrations/print/${registration.id}`;
     const name = registration.nome_completo;
 

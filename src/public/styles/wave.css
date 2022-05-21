@@ -1,0 +1,26 @@
+
+/* Wave */
+.wave {
+    position: fixed;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave svg {
+    position: relative;
+    display: block;
+    width: calc(181% + 1.3px);
+    height: 50%;
+    transform: rotateY(180deg);
+    transform: rotateX(180deg);
+    z-index: -1;
+}
+
+.wave .shape-fill {
+    fill: #e63946;
+    opacity: 0.9;
+}

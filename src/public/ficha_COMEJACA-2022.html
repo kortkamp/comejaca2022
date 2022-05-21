@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="icon" href="img/jacare.svg">
+    <meta charset="utf-8">
+    <meta name="description" content="Confraternização das Mocidades Espiritas de Jacarepagua">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="styles/print.css">
+</head>
+<div class="wrapper">
+
+
+    <header class="title">
+        <!--         <div class="logo">
+            <img src="img/jacare.svg" alt="Oi! eu sou o Jacaré">
+        </div> -->
+        <div class="nome">
+            <h1>XLIII COMEJACA 2022 </h1>
+            <span>Confraternização das Mocidades Espíritas de Jacarepaguá</span>
+            <span class="tema"># DIVERSIDADE</span>
+        </div>
+
+    </header>
+
+    </header>
+    <div class="informacao">
+        <div class="container">Valor da inscrição:</div>
+
+
+
+        <div class="container"> Confraternistas e Trabalhadores:<br>
+            R$ 40,00 <br>
+            Pequeno companheiro: R$ 25,00
+        </div>
+
+        <div class="container">
+            Camisa do evento:
+        </div>
+
+        <div class="container">
+            Adultos Crianças: R$ 28,00 <br><br>
+            <b> Numero: 01</b>
+        </div>
+    </div>
+
+    <form class="form" onsubmit="submitForm(event)">
+
+        <!-- dados  pessoais -->
+        <div class="title">
+
+            <p>DADOS PESSOAIS</p>
+
+        </div>
+
+        <div class="steps">
+
+
+
+            <div class="inputfield">
+                <label for="nome">Nome Completo:
+                </label>
+                <input type="text" disabled name="nomecompleto">
+            </div>
+
+
+            <div class="inputfield">
+                <label for="nome_cracha">Nome no cracha:</label>
+                <input type="text" disabled name="nome_cracha">
+            </div>
+
+
+            <div class="inputfield">
+                <label for="email">E-mail:</label>
+                <input type="email" disabled placeholder="" name="email">
+            </div>
+
+            <div class="inputfield">
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input disabled name="data_nascimento" maxlength="10">
+            </div>
+
+            <div class="inputfield">
+                <label for="idade">Idade (30/07/2022):</label>
+                <input type="number" name="idade" onload="" disabled>
+            </div>
+
+            <div class="inputfield">
+                <label>Sexo:</label>
+                <input type="text" id="nome_cracha" disabled name="sexo">
+            </div>
+
+            <div class="inputfield">
+                <label>Genero:</label>
+                <input type="text" id="nome_cracha" disabled name="genero">
+            </div>
+
+
+            <div class="inputfield" id="tel">
+                <label>Telefone:</label>
+                <input type="tel" disabled name="telefone">
+            </div>
+
+        </div>
+
+        <!-- endereco -->
+        <div class="title">
+
+            <p>ENDEREÇO</p>
+
+        </div>
+        <div class="steps">
+
+
+            <div class="inputfield">
+                <label for="CEP">CEP:</label>
+                <input type="text" disabled id="cep" name="CEP">
+            </div>
+
+            <div class="inputfield">
+                <label for="endereco">Endereço:</label>
+                <input type="text" disabled id="endereco" name="endereco" disabled>
+            </div>
+
+            <div class="inputfield">
+                <label for="estado">Estado:</label>
+                <input type="text" disabled id="estado" name="estado" disabled>
+            </div>
+
+            <div class="inputfield">
+                <label for="cidade">Cidade:</label>
+                <input type="text" disabled id="cidade" name="cidade" disabled>
+            </div>
+
+
+            <div class="inputfield">
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" disabled name="bairro" disabled>
+            </div>
+
+            <div class="inputfield">
+                <label for="numero">Numero:</label>
+                <input type="text" id="numero" disabled name="numero">
+            </div>
+
+            <div class="inputfield">
+                <label for="numero">Complemento:</label>
+                <input type="text" id="numero" name="numero" disabled>
+            </div>
+        </div>
+
+        <!-- dados para o evento -->
+
+        <p>DADOS PARA O EVENTO</p>
+
+
+        <div class="steps">
+
+            <div class="inputfield">
+                <label>Tipo de partipação:</label>
+                <input type="text" id="nome_cracha" disabled name="comissao">
+            </div>
+            <div class="tarefas" style="display: grid; grid-template-columns: 1fr 1fr;">
+
+                <div class="inputfield">
+                    <label for="tshitnum">GFE:</label>
+                    <input type="text" id="nome_cracha" style="max-width: 50%;" disabled name="comissao">
+                </div>
+
+                <div class="inputfield">
+                    <label for="tshitnum">Comissão:</label>
+                    <input type="text" id="nome_cracha" style="max-width: 50%;" disabled name="comissao">
+                </div>
+            </div>
+
+            <div class="inputfield">
+
+                <label for="tshitnum">Deseja camisa?</label>
+
+                <input type="text" disabled id="nome_cracha" name="camisa">
+            </div>
+
+            <div class="inputfield">
+                <label>Tamanho da camisa:</label>
+                <input type="text" id="nome_cracha" disabled name="tamanho_camisa">
+            </div>
+        </div>
+
+        <!-- outras informações -->
+        <div class="title">
+
+            <p>OUTRAS INFORMAÇÕES</p>
+
+        </div>
+        <div class="steps">
+
+
+            <div class="inputfield">
+                <label>Outras COMEJACAS?</label>
+                <input type="text" disabled name="comejacas">
+            </div>
+
+            <div>
+                <label>Quantas ?</label>
+                <input type="text" disabled name="quantas" disabled>
+            </div>
+
+
+            <div class="inputfield">
+                <label>Tem alergia?</label>
+                <input type="text" disabled name="alergias">
+            </div>
+
+            <div>
+                <label>Quais? </label>
+                <input type="text" name="quais_alergia" disabled>
+            </div>
+
+
+            <div class="inputfield">
+                <label>Doença crônica?</label>
+                <input type="text" disabled name="doenca">
+            </div>
+            <div>
+                <label>Quais?</label>
+                <input type="text" name="quais_doenca" disabled>
+            </div>
+
+            <div class="inputfield">
+                <label>Uso de medicação?</label>
+                <input type="text" disabled name="nome_cracha" disabled>
+            </div>
+            <div>
+                <label>Quais? </label>
+                <input type="text" name="quais_medicacao" disabled>
+            </div>
+
+
+            <div class="inputfield">
+                <label>Vegetariano(a)?</label>
+                <input type="text" name="vegetariano" disabled>
+            </div>
+            <div>
+                <label>Quais? </label>
+                <input type="text" name="quais_vegetariano" disabled>
+            </div>
+
+            <div class="inputfield">
+                <label>Possui plano de saúde?</label>
+                <input type="text" name="quais_medicacao" disabled>
+            </div>
+
+            <div>
+                <label>Telefone do convênio:</label>
+                <input type="text" name="telefone_plano" disabled>
+            </div>
+        </div>
+
+
+        <!-- dados da casa espirita -->
+
+
+        <p>DADOS DA INSTITUÍÇÃO ESPIRITA</p>
+
+
+        <div class="steps">
+
+
+            <div class="inputfield">
+                <label>Nome:</label>
+                <input type="text" disabled name="instituicao_espirita" list="datalist">
+
+            </div>
+            <div class="inputfield">
+                <label>Endereço:</label>
+                <input name="endereco_c" disabled type="text">
+            </div>
+            <div class="inputfield">
+
+                <label for="bairro_espirita">Bairro:</label>
+                <input name="bairro_c" disabled min="1922-01-01" max="3022-01-01">
+
+            </div>
+
+            <div class="inputfield">
+                <label>Cidade:</label>
+                <input name="cidade_c" type="text" disabled>
+            </div>
+
+            <div class="inputfield">
+                <label>CEP:</label>
+                <input name="cep_centro" disabled type="text">
+            </div>
+
+            <div class="inputfield">
+                <label> Tempo de instituição:</label>
+                <input name="tempo_instituicao" type="number" disabled min="1" max="100">
+            </div>
+
+
+        </div><br>
+</div><br>
+
+<div class="wrapper">
+    <div class="referencia">
+        <div class="inputfield">
+            <label for="nome">Ref.
+            </label>
+            <input type="text" disabled name="nomecompleto">
+        </div>
+
+        <div class="inputfield">
+            <label for="nome">Numero:
+            </label>
+            <input type="text" disabled name="nomecompleto">
+        </div>
+    </div>
+    <hr>
+    <div class="aprovacoes" s ">
+        <div class=" participante">
+        <div class="title-assinatura">
+            <p>ASSINATURA DO DO PARTICIPANTE</p>
+        </div>
+        <div class="termo">
+            Eu me comprometo a participar de todas as atividades da COMEJACA e aceito seguir regulamento
+            conforme
+            descrito nas normas de ação e no plano geral do evento.<br><br>
+            <div class="assinaturas-title">
+                <div class="assinatura-column">
+                    <div class="assinatura-nome">
+                        Assinatura do Participante </div>
+
+                </div>
+
+
+                <div class="assinatura-column">
+                    <div class="assinatura-nome">
+                        Data </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="title-assinatura">
+            <p>INSTITUIÇÃO ESPÍRITA</p>
+        </div><br>
+        <div class="acordo">
+            <div id="instituicao-espirita">
+                Declaro que o participante acima está de acordo com os critérios estabelecidos no
+                Plano Geral da XL
+                COMEJACA.</div><br>
+            <div class="assinaturas-title">
+                <div class="assinatura-column">
+                    <div class="assinatura-nome">
+                        Dirigente DIJ </div>
+                    <div class="assinatura-data"> Data e telefone</div>
+                </div>
+
+
+                <div class="assinatura-column">
+                    <div class="assinatura-nome">
+                        Presidente IE: </div>
+                    <div class="assinatura-data"> Data e telefone: </div>
+                </div>
+            </div><br><br>
+            <div class="title-assinatura">
+                <p> DO RESPONSÁVEL PARA MENORES DE IDADE</p>
+            </div><br><br>
+            <div class="responsavel" style="text-align: justify;">
+                Eu __________________________ Pai / Mãe ou responsável, Portador da identidade número
+                ________________________ autorizo o menor a participar da
+                XLIII COMEJACA nos dias 30 e 31 de julho de 2022.<br><br>
+
+
+                <div class="assinaturas-title">
+
+
+
+                    <div class="assinatura-nome">
+                        Assinatura do responsável </div>
+
+                </div><br><br>
+
+
+
+
+            </div>
+            <button value="Imprimir" 
+                style="width:250px; height: 75px; font-weight: bold;border-radius: 5px;font-size: 25px; background: #A9A9A9	"
+                onClick="window.print()">IMPRIMIR</button>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+
+    </body>
+
+</html>
