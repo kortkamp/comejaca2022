@@ -18,10 +18,10 @@ export const createRegistrationValidate = celebrate(
       bairro: Joi.string().min(3).max(100).required(),
       numero: Joi.string().min(1).max(100).required(),
 
-      questionario: Joi.string().min(3).max(100).required(),
+      questionario: Joi.string().required(),
 
       tipo: Joi.string().min(3).max(100).required(),
-      comissao: Joi.string().min(3).max(100).required(),
+      comissao: Joi.string().max(100).allow(''),
       gfe: Joi.string().min(1).max(100).required(),
       incluir_camisa: Joi.string().valid('S', 'N'),
       tamanho_camisa: Joi.string().min(1).max(100).required(),
