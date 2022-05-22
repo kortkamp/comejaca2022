@@ -15,15 +15,15 @@ const schema = {
   cidade: Joi.string().min(3).max(100).required(),
   bairro: Joi.string().min(3).max(100).required(),
   numero: Joi.string().min(1).max(100).required(),
-  complemento: Joi.string().min(3).max(100).required(),
+  complemento: Joi.string().min(3).max(100),
 
   questionario: Joi.string().required(),
 
   tipo: Joi.string().min(3).max(100).required(),
   comissao: Joi.string().max(100).allow(''),
-  gfe: Joi.string().min(1).max(100).required(),
+  gfe: Joi.string().min(1).max(100),
   incluir_camisa: Joi.string().valid('S', 'N'),
-  tamanho_camisa: Joi.string().min(1).max(100).required(),
+  tamanho_camisa: Joi.string().min(1).max(100),
 
   tempo_instituicao: Joi.string().min(1).max(100).required(),
   nome_instituicao: Joi.string().min(3).max(100).required(),
@@ -31,7 +31,6 @@ const schema = {
   cep_instituicao: Joi.string().min(3).max(100).required(),
   cidade_instituicao: Joi.string().min(3).max(100).required(),
   bairro_instituicao: Joi.string().min(3).max(100).required(),
-  telefone_instituicao: Joi.string().min(3).max(100).required(),
 };
 
 export const createRegistrationValidate = celebrate(
