@@ -122,7 +122,7 @@ async function fillForm() {
 
   const questionario = JSON.parse(inscricao.registration.questionario);
 
-  setValue('nomecompleto', inscricao.registration.nome_completo);
+  setValue('nome_completo', inscricao.registration.nome_completo);
   setValue('nome_cracha', inscricao.registration.nome_cracha);
   setValue('email', inscricao.registration.email);
   setValue('data_nascimento', inscricao.registration.data_nascimento);
@@ -162,11 +162,11 @@ async function fillForm() {
   setValue('telefone_plano', questionario[5].telefone_plano);
 
   setValue('tempo_instituicao', inscricao.registration.tempo_instituicao);
-  setValue('instituicao_espirita', inscricao.registration.nome_instituicao);
-  setValue('cep_centro', inscricao.registration.cep_instituicao);
-  setValue('endereco_c', inscricao.registration.endereco_instituicao);
-  setValue('cidade_c', inscricao.registration.cidade_instituicao);
-  setValue('bairro_c', inscricao.registration.bairro_instituicao);
+  setValue('nome_instituicao', inscricao.registration.nome_instituicao);
+  setValue('cep_instituicao', inscricao.registration.cep_instituicao);
+  setValue('endereco_instituicao', inscricao.registration.endereco_instituicao);
+  setValue('cidade_instituicao', inscricao.registration.cidade_instituicao);
+  setValue('bairro_instituicao', inscricao.registration.bairro_instituicao);
 }
 
 // PUT
@@ -251,11 +251,11 @@ function updateForm(event) {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
 
-  fetch(`${domain}/api/inscricoes/${id}`, {
+  fetch(`${domain}/api/registrations/${id}`, {
     headers: {
       'Content-Type': 'application/json',
     },
-    method: '',
+    method: 'PUT',
     body: JSON.stringify(inscricao),
   }).then(res => {
     window.location.pathname = 'confirmacao_atualizacao.html';
