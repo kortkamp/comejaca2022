@@ -90,7 +90,7 @@ async function submitForm(event) {
     body: JSON.stringify(inscricao),
   });
   console.log(JSON.parse(await res.text()));
-  window.location.pathname = 'confirmacao_inscricao.html';
+/*   window.location.pathname = 'confirmacao_inscricao.html'; */
 }
 
 // GET
@@ -137,15 +137,10 @@ async function fillForm() {
   setValue('numero', inscricao.registration.numero);
 
   setValue('tipo_participacao', inscricao.registration.tipo);
-  setValue('comissao', inscricao.registration.incluir_camisa);
+  setValue('comissao', inscricao.registration.comissao);
   setValue('camisa', inscricao.registration.incluir_camisa);
   setValue('tamanho_camisa', inscricao.registration.tamanho_camisa);
 
-  // {
-  //     nome: "Já participou de outras comejacas ?",
-  //     resposta: getValue('comejacas'),
-  //     quantas: getValue('quantas')
-  // },
   setValue('comejacas', inscricao.registration.questionario[0].resposta);
   setValue('quantas', inscricao.registration.questionario[0].quantas);
 
@@ -175,6 +170,7 @@ async function fillForm() {
   setValue('bairro_c', inscricao.registration.bairro_instituicao);
 }
 
+// PUT
 function updateForm(event) {
   event.preventDefault();
   const form = event.target;
@@ -191,7 +187,7 @@ function updateForm(event) {
     }
   }
 
-  const dados_pessoais = {
+  const inscricao = {
     nome_completo: getValue('nomecompleto'),
     nome_cracha: getValue('nome_cracha'),
     email: getValue('email'),
@@ -207,41 +203,33 @@ function updateForm(event) {
       cidade: getValue('cidade'),
       bairro: getValue('bairro'),
       numero: getValue('numero'),
+      complemento: getValue('complemento'),
     },
+
+
+    
   };
 
-  const questionario = [
-    {
-      nome: 'Já participou de outras comejacas ?',
-      resposta: getValue('comejacas'),
-      quantas: getValue('quantas'),
-    },
-    {
-      nome: 'Possui algum tipo de alergia ?',
-      resposta: getValue('alergia'),
-      quais: getValue('quais_alergia'),
-    },
-    {
-      nome: 'Possui alguma doença cronica? ',
-      resposta: getValue('doenca'),
-      quais: getValue('quais_doenca'),
-    },
-    {
-      nome: 'Faz um rotineiro de medicação ?',
-      resposta: getValue('medicacao'),
-      quais: getValue('quais_medicacao'),
-    },
-    {
-      nome: 'Faz uso de alimentação vegetarian ?',
-      resposta: getValue('vegetariano'),
-      quais: getValue('quais_vegetariano'),
-    },
-    {
-      nome: 'Possui plano de saúde ?',
-      resposta: getValue('plano_de_saude'),
-      telefone_convenio: getValue('telefone_plano'),
-    },
-  ];
+   getValue('comejacas', inscricao.registration.questionario[0].resposta);
+  getValue('quantas', inscricao.registration.questionario[0].quantas);
+
+  getValue('alergia', inscricao.registration.questionario[1].resposta);
+  getValue('quais_alergia', inscricao.registration.questionario[1].quais);
+
+  getValue('doenca', inscricao.registration.questionario[2].resposta);
+  getValue('quais_doenca', inscricao.registration.questionario[2].quais);
+
+  getValue('medicacao', inscricao.registration.questionario[3].resposta);
+  getValue('quais_medicacao', inscricao.registration.questionario[3].quais);
+
+  getValue('vegetariano', inscricao.registration.questionario[4].resposta);
+  getValue('quais_vegetariano', inscricao.registration.questionario[4].quais);
+
+  getValue('plano_de_saude', inscricao.registration.questionario[5].resposta);
+  getValue(
+    'telefone_plano',
+    inscricao.registration.questionario[5].telefone_plano,
+  );
 
   const instituicao = {
     tempo_instituicao: getValue('tempo_instituicao'),
@@ -271,9 +259,9 @@ function updateForm(event) {
     headers: {
       'Content-Type': 'application/json',
     },
-    method: 'PUT',
+    method: '',
     body: JSON.stringify(payload),
   }).then(res => {
-    window.location.pathname = 'confirmacao.html';
+    window.location.pathname = 'confirmacao_atualizacao.html';
   });
 }
