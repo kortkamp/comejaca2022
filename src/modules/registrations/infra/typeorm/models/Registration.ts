@@ -61,6 +61,9 @@ class Registration implements IRegistration {
   numero: string;
 
   @Column()
+  complemento: string;
+
+  @Column()
   questionario: string;
 
   @Column()
@@ -90,8 +93,6 @@ class Registration implements IRegistration {
   cidade_instituicao: string;
   @Column()
   bairro_instituicao: string;
-  @Column()
-  telefone_instituicao: string;
 
   @CreateDateColumn()
   created_at: Date;

@@ -1,7 +1,11 @@
 import { Router } from 'express';
 
 import { RegistrationsController } from '../controllers/RegistrationsController';
-import { createRegistrationValidate } from '../validations/registrations.validation';
+import {
+  createRegistrationValidate,
+  showRegistrationValidate,
+  updateRegistrationValidate,
+} from '../validations/registrations.validation';
 
 const registrationsRoutes = Router();
 
@@ -15,9 +19,17 @@ registrationsRoutes.post(
 
 registrationsRoutes.get('/', registrationsController.index);
 
-registrationsRoutes.put('/:id', registrationsController.update);
+registrationsRoutes.put(
+  '/:id',
+  updateRegistrationValidate,
+  registrationsController.update,
+);
 
-registrationsRoutes.get('/:id', registrationsController.show);
+registrationsRoutes.get(
+  '/:id',
+  showRegistrationValidate,
+  registrationsController.show,
+);
 
 registrationsRoutes.get('/print/:id', registrationsController.print);
 

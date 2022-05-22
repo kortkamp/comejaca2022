@@ -16,6 +16,7 @@ interface IRegistration {
 
   bairro: string;
   numero: string;
+  complemento: string;
 
   questionario: string;
 
@@ -31,7 +32,6 @@ interface IRegistration {
   cep_instituicao: string;
   cidade_instituicao: string;
   bairro_instituicao: string;
-  telefone_instituicao: string;
 
   created_at: Date;
   updated_at: Date;
