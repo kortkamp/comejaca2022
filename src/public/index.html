@@ -9,7 +9,7 @@
     <meta name="keywords" content="COMEJACA">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/mobile.css">
-    .
+    <link rel="stylesheet" href="styles/wave.css">
     <link rel=="stylesheet" type=="text/css" href=="/print.css" media=="print">
 </head>
 <div class="wrapper">
@@ -32,24 +32,24 @@
 
             <div class="inputfield">
                 <label for="nome_completo">Nome Completo</label>
-                <input type="text" class="input" id="nome_completo"  name="nome_completo">
+                <input type="text" class="input" id="nome_completo" name="nome_completo">
             </div>
 
 
             <div class="inputfield">
                 <label for="nome_cracha">Nome no cracha</label>
-                <input type="text" class="input" id="nome_cracha"  name="nome_cracha">
+                <input type="text" class="input" id="nome_cracha" name="nome_cracha">
             </div>
 
 
             <div class="inputfield">
                 <label for="email">E-mail</label>
-                <input type="email" class="input" placeholder=""  name="email">
+                <input type="email" class="input" placeholder="" name="email">
             </div>
 
             <div class="inputfield">
                 <label for="data_nascimento">Data de Nascimento</label>
-                <input class="input" type="date" id="data_nascimento"  name="data_nascimento" maxlength="10">
+                <input class="input" type="date" id="data_nascimento" name="data_nascimento" maxlength="10">
             </div>
 
             <div class="inputfield">
@@ -59,7 +59,7 @@
 
             <div class="inputfield">
                 <label>Sexo</label>
-                <select name="sexo" >
+                <select name="sexo" id="sexo">
                     <option value="">Selecionar</option>
                     <option value="M">Masculino</option>
                     <option value="F">Feminino</option>
@@ -69,7 +69,7 @@
 
             <div class="inputfield">
                 <label>Genero</label>
-                <select name="genero" >
+                <select name="genero" id="genero">
                     <option value="">Selecionar</option>
                     <option value="Cisgenero">Cisgênero</option>
                     <option value="Transgenero">Transgênero</option>
@@ -81,7 +81,7 @@
 
             <div class="inputfield" id="tel">
                 <label>Telefone</label>
-                <input type="tel"  class="input" onkeypress="mask(this, telephone)" onblur="mask(this, telephone); "
+                <input type="tel" class="input" onkeypress="mask(this, telephone)" onblur="mask(this, telephone); "
                     name="telefone">
             </div>
 
@@ -128,7 +128,7 @@
 
             <div class="inputfield">
                 <label for="numero">Complemento</label>
-                <input type="text" id="numero" name="numero" class="input">
+                <input type="text" id="nmero" name="numero" class="input">
             </div>
         </div>
 
@@ -312,7 +312,6 @@
                         onblur="mask(this, telephone); " disabled id="temPlanoSaude" name="telefone_plano">
                 </div>
             </div>
-
         </div>
 
         <!-- dados da casa espirita -->
@@ -327,17 +326,17 @@
                 <label for="nome_instituicao">Nome</label>
                 <input type="text" id="nome_instituicao" name="nome_instituicao" list="datalist">
                 <datalist id="datalist">
-                    <option value="Instituição Espirita">Instituição Espirita</option>
+                    <option>Instituição Espirita</option>
                 </datalist>
             </div>
             <div class="inputfield">
                 <label for="endereco_instituicao">Endereço</label>
-                <input name="endereco_instituicao" id="endereco_instituicao" type="TEXT" class="input">
+                <input name="endereco_instituicao" id="endereco_instituicao" type="text" class="input">
             </div>
             <div class="inputfield">
 
                 <label for="bairro_instituicao">Bairro</label>
-                <input name="bairro_instituicao" id="bairro_instituicao" class="input" min="1922-01-01"
+                <input name="bairro_instituicao" id="bairro_instituicao" class="input""
                     max="3022-01-01">
 
             </div>
@@ -357,11 +356,6 @@
                 <input name="tempo_instituicao" id="tempo_instituicao" type="number" class="input" min="1" max="100">
             </div>
 
-            <div class="inputfield">
-                <label for="">Telefone</label>
-                <input name="telefone_instituicao" id="telefone_instituicao" type="text" class="input"
-                    onkeypress="mask(this, telephone) " onblur="mask(this, telephone); ">
-            </div>
         </div>
 
         <div class="steps">
@@ -422,8 +416,8 @@ Jesus é para o homem o exemplo da perfeição moral a que pode pretender a huma
             </textarea>
             </div>
 
-            <div class="terms-checkbox" >
-                <input type="checkbox" style="width: 50px; height: 50px;" id="terms-checkbox" name="terms-checkbox" >
+            <div class="terms-checkbox">
+                <input type="checkbox" style="width: 50px; height: 50px;" id="terms-checkbox" name="terms-checkbox">
                 <label for="terms-checkbox">Li e concordo com as NORMAS DE AÇÂO COMEJACA 2022</label>
             </div>
 
@@ -432,7 +426,7 @@ Jesus é para o homem o exemplo da perfeição moral a que pode pretender a huma
 
         <div class="inputfield">
 
-            <button type="submit" name="cadastrar" id="save">CONFIRMAR INSCRIÇÃO</button>
+            <button type="submit" onsubmit="submitForm(event)" name="cadastrar" id="save">CONFIRMAR INSCRIÇÃO</button>
 
         </div>
     </form>

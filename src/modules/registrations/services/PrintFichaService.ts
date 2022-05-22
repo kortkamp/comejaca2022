@@ -29,11 +29,12 @@ class PrintFichaService {
 
     const templateFile = path.resolve(__dirname, '..', 'views', 'ficha.hbs');
 
-    // const link = `${process.env.CONFIRM_USER_URL}${userToken.token}`;
-
     const templateHTML = await this.templateProvider.parse({
       file: templateFile,
-      variables: { ...registration },
+      variables: {
+        ...registration,
+        questionario: JSON.parse(registration.questionario),
+      },
     });
 
     return templateHTML;
