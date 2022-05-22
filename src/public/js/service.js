@@ -89,8 +89,8 @@ async function submitForm(event) {
     method: 'POST',
     body: JSON.stringify(inscricao),
   });
-  console.log(JSON.parse(await res.text()));
-  /*   window.location.pathname = 'confirmacao_inscricao.html'; */
+  console.log(JSON.parse(await res.text()))
+  window.location.pathname = 'confirmacao_inscricao.html';
 }
 
 // GET
