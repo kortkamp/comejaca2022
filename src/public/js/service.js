@@ -1,5 +1,5 @@
 // const domain = "https://www.comejaca.org.br"
-const domain = 'http://localhost:3003';
+// const domain = 'http://localhost:3003';
 
 // POST
 
@@ -45,7 +45,6 @@ async function submitForm(event) {
     cep_instituicao: getValue('cep_instituicao'),
     cidade_instituicao: getValue('cidade_instituicao'),
     bairro_instituicao: getValue('bairro_instituicao'),
-    telefone_instituicao: getValue('telefone_instituicao'),
 
     questionario: JSON.stringify([
       {
@@ -82,7 +81,7 @@ async function submitForm(event) {
   };
 
   console.log(inscricao);
-  const res = await fetch(`${domain}/api/registrations/`, {
+  const res = await fetch(`./api/registrations/`, {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -90,7 +89,7 @@ async function submitForm(event) {
     body: JSON.stringify(inscricao),
   });
   console.log(JSON.parse(await res.text()));
-  /*   window.location.pathname = 'confirmacao_inscricao.html'; */
+  window.location.pathname = 'confirmacao_inscricao.html';
 }
 
 // GET
@@ -111,7 +110,7 @@ async function fillForm() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
 
-  const res = await fetch(`${domain}/api/registrations/${id}`, {
+  const res = await fetch(`./api/registrations/${id}`, {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -251,7 +250,7 @@ function updateForm(event) {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
 
-  fetch(`${domain}/api/registrations/${id}`, {
+  fetch(`./api/registrations/${id}`, {
     headers: {
       'Content-Type': 'application/json',
     },
