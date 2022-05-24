@@ -1,16 +1,18 @@
-// const domain = "https://www.comejaca.org.br"
-const domain = 'http://localhost:3003';
-
 async function getRegistrationList() {
-  const table = document.querySelector('.list-table');
+  const table = document.querySelector('.content-table');
 
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get('id');
+  const queryParams = new URLSearchParams({
+    page: 1,
+    per_page: 2000,
+    orderBy: 'number_id',
+    orderType: 'ASC',
+  });
 
-  const res = await fetch(`${domain}/api/registrations/`, {
+  const res = await fetch(`./api/registrations/?${queryParams}`, {
     headers: {
       'Content-Type': 'application/json',
     },
+
     method: 'GET',
   });
 
@@ -18,9 +20,13 @@ async function getRegistrationList() {
 
   let html = '';
 
+  Object.keys(registrations.result).forEach(registration => {
+    delete registration.questionario;
+  });
+
   html += '<thead>';
   Object.keys(registrations.result[0]).forEach(value => {
-    html += `<td>${value}</td>`;
+    html += `<td>${value.toUpperCase().replaceAll('_', ' ')}</td>`;
   });
   html += '</thead>';
 
