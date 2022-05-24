@@ -35,4 +35,3 @@ birthday.addEventListener("change", (event) => {
 });
 
 
-
