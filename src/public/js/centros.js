@@ -3,10 +3,10 @@
 const centros = [
     {
         "nome": "Recanto Espirita Sol de Assis",
-        "endereco": "",
+        "endereco": ".",
         "cidade": "Rio de Janeiro",
-        "bairro": "",
-        "cep": "",
+        "bairro": ".",
+        "cep": ".",
         "telefone": ""
     },
 

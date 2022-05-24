@@ -12,8 +12,8 @@ function removerDisabledComissao(event) {
         comissao.disabled = true
     } else {
         console.log(event)
-       /*  comissao.setAttribute('disabled','' ) */
-       comissao.disabled = false
+        /*  comissao.setAttribute('disabled','' ) */
+        comissao.disabled = false
     }
 }
 
@@ -23,7 +23,7 @@ function removerDisabledCamisa(event) {
     } else {
         console.log(event)
 
-       camisa.disabled = false
+        camisa.disabled = false
     }
 }
 
@@ -53,7 +53,7 @@ function removerDisabledTemDoencaCronica(event) {
         temDoencaCronica.disabled = true
     } else {
         console.log(event)
-
+        
         temDoencaCronica.disabled = false
     }
 }
@@ -89,5 +89,13 @@ function removerDisabledTemPlanoSaude(event) {
 }
 
 
+/* 
 
 
+function adicionarComissao(event) {
+
+console.log(event)
+
+
+
+} */
