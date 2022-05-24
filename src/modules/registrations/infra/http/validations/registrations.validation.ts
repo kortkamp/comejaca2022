@@ -27,10 +27,10 @@ const schema = {
 
   tempo_instituicao: Joi.string().min(1).max(100).required(),
   nome_instituicao: Joi.string().min(3).max(100).required(),
-  endereco_instituicao: Joi.string().min(3).max(100).required(),
-  cep_instituicao: Joi.string().min(3).max(100).required(),
-  cidade_instituicao: Joi.string().min(3).max(100).required(),
-  bairro_instituicao: Joi.string().min(3).max(100).required(),
+  endereco_instituicao: Joi.string().required(),
+  cep_instituicao: Joi.string().required(),
+  cidade_instituicao: Joi.string().required(),
+  bairro_instituicao: Joi.string().required(),
 };
 
 export const createRegistrationValidate = celebrate(
