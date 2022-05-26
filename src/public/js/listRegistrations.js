@@ -1,10 +1,12 @@
 async function getRegistrationList() {
-  const { user, token } = await getToken();
+  const data = await getToken();
 
-  if (!token) {
+  if (!data) {
     // nao logou antes
     window.location.pathname = 'form.html';
   }
+
+  const { user, token } = data;
 
   const table = document.querySelector('.content-table');
 
@@ -32,7 +34,7 @@ async function getRegistrationList() {
     window.location.pathname = 'form.html';
   }
 
-  document.querySelector('.usuario').innerHTML = user.name;
+  document.querySelector('.usuario').innerHTML = user?.name;
 
   const { registrations } = response;
 
