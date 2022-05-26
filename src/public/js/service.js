@@ -1,5 +1,3 @@
-// const domain = "https://www.comejaca.org.br"
-// const domain = 'http://localhost:3003';
 
 // POST
 
@@ -211,7 +209,6 @@ function updateForm(event) {
     cep_instituicao: getValue('cep_instituicao'),
     cidade_instituicao: getValue('cidade_instituicao'),
     bairro_instituicao: getValue('bairro_instituicao'),
-    telefone_instituicao: getValue('telefone_instituicao'),
 
     questionario: JSON.stringify([
       {

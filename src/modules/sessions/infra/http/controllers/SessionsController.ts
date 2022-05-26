@@ -9,7 +9,9 @@ class SessionsController {
 
     const session = await createSession.execute(request.body);
 
-    return response.status(200).json(instanceToInstance(session));
+    return response
+      .status(200)
+      .json(instanceToInstance({ success: true, ...session }));
   }
 }
 

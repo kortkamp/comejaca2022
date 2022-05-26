@@ -13,29 +13,53 @@
 
 <body onload="getRegistrationList()">
 
-    <nav></nav>
+    <nav>
+        <div class="bem-vindo" style="display: flex; align-content:center">
+            <p>Bem vindo <b class="usuario"> Nome do Usuário</b></p>
+        </div>
+        <div>
+            <p class="sair" style="font-weight: bold;"> Sair</p>
+        </div>
+
+    </nav>
     <header class="title">
         <img src="img/jacare.svg" alt="Oi! eu sou o Jacaré">
         <h1>XLIII COMEJACA 2022 </h1>
         <span>Confraternização das Mocidades Espíritas de Jacarepaguá</span>
     </header>
-    <div class="content">
-<p>Bem vindo Bruno Bonzumet!</p> 
-<p>Inscritos:</p>
-<p>Ano:</p>
-<p>Exportar</p>
 
- 
-</div>
-    <section>
-        <div class="scroll" style="overflow-x:auto;">
-            <table class="content-table">
-               
-                
-            </table>
+    <div class="content">
+        <!--         <div id="anoReferencia" class="item">
+            <label for="ano">Ano</label>
+            <select name="" id="ano">
+                <option value="">2022</option>
+                <option value="">2023</option>
+                <option value="">2024</option>
+                <option value="">2025</option>
+            </select>
+        </div> -->
+        <div class="file">
+            <button type="button"
+                style="padding: 8px; font-weight: bold; font-size: 1.5rem; color: #fff; margin-bottom: 25px; background: #264680; border-radius: 5px;"
+                onclick="tableToCSV()">
+                BAIXAR ARQUIVO
+            </button>
         </div>
-    </section>
+
+
+    </div>
+    <div class="scroll" style="overflow-x:auto;">
+        <table class="content-table">
+
+
+        </table>
+
+
+    </div>
+
+
 </body>
 <script src="./js/listRegistrations.js"></script>
+<script src="js/login.js"></script>
 
 </html>

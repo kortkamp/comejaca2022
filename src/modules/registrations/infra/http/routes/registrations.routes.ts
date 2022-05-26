@@ -1,3 +1,4 @@
+import { authMiddleware } from '@modules/sessions/infra/http/middlewares/authMiddleware';
 import { Router } from 'express';
 
 import { RegistrationsController } from '../controllers/RegistrationsController';
@@ -17,7 +18,7 @@ registrationsRoutes.post(
   registrationsController.create,
 );
 
-registrationsRoutes.get('/', registrationsController.index);
+registrationsRoutes.get('/', authMiddleware, registrationsController.index);
 
 registrationsRoutes.put(
   '/:id',

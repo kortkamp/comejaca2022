@@ -1,4 +1,13 @@
 async function getRegistrationList() {
+  const data = await getToken();
+
+  if (!data) {
+    // nao logou antes
+    window.location.pathname = 'form.html';
+  }
+
+  const { user, token } = data;
+
   const table = document.querySelector('.content-table');
 
   const queryParams = new URLSearchParams({
@@ -11,12 +20,26 @@ async function getRegistrationList() {
   const res = await fetch(`./api/registrations/?${queryParams}`, {
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
     },
 
     method: 'GET',
   });
 
-  const { registrations } = JSON.parse(await res.text());
+  const response = JSON.parse(await res.text());
+
+  if (!response.success) {
+    // autorização falhou
+    await localStorage.removeItem('@comejaca:login');
+    window.location.pathname = 'form.html';
+  }
+
+  document.querySelector('.usuario').innerHTML = user?.name;
+
+  const { registrations } = response;
+
+  // document.querySelector('.inscritos').innerHTML =
+  //   registrations.total_registers;
 
   let html = '';
 
@@ -41,4 +64,41 @@ async function getRegistrationList() {
   html += '</tbody>';
 
   table.innerHTML = html;
+}
+
+function tableToCSV() {
+  let csv_data = [];
+  const rows = document.getElementsByTagName('tr');
+  for (let i = 0; i < rows.length; i++) {
+    const cols = rows[i].querySelectorAll('td,th');
+
+    const csvrow = [];
+    for (let j = 0; j < cols.length; j++) {
+      csvrow.push(cols[j].innerHTML);
+    }
+
+    csv_data.push(csvrow.join(';'));
+  }
+
+  csv_data = csv_data.join('\n');
+
+  downloadCSVFile(csv_data);
+}
+
+function downloadCSVFile(csv_data) {
+  CSVFile = new Blob(['\ufeff', csv_data], {
+    type: 'text/csv',
+  });
+
+  const temp_link = document.createElement('a');
+
+  temp_link.download = 'produtos.csv';
+  const url = window.URL.createObjectURL(CSVFile);
+  temp_link.href = url;
+
+  temp_link.style.display = 'none';
+  document.body.appendChild(temp_link);
+
+  temp_link.click();
+  document.body.removeChild(temp_link);
 }
