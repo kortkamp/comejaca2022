@@ -11,14 +11,14 @@
 <body>
     <div class="center">
         <h1>ACESSO RESTRITO</h1>
-        <form method="post">
+        <form onsubmit="login(event)">
             <div class="textfield">
-                <input type="text" required>
+                <input name="email" type="email" required>
                 <span></span>
-                <label>Usuário</label>
+                <label>Email</label>
             </div>
             <div class="textfield">
-                <input type="password" required>
+                <input name="password" type="password" required>
                 <span></span>
                 <label>Senha</label>
             </div>
@@ -31,5 +31,7 @@
     </div>
 
 </body>
+
+<script src="js/login.js"></script>
 
 </html>
