@@ -32,7 +32,12 @@ async function getRegistrationList() {
     window.location.pathname = 'form.html';
   }
 
+  document.querySelector('.usuario').innerHTML = user.name;
+
   const { registrations } = response;
+
+  document.querySelector('.inscritos').innerHTML =
+    registrations.total_registers;
 
   let html = '';
 
