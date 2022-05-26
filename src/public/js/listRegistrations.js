@@ -1,4 +1,11 @@
 async function getRegistrationList() {
+  const { user, token } = await getToken();
+
+  if (!token) {
+    // nao logou antes
+    window.location.pathname = 'form.html';
+  }
+
   const table = document.querySelector('.content-table');
 
   const queryParams = new URLSearchParams({
@@ -11,12 +18,21 @@ async function getRegistrationList() {
   const res = await fetch(`./api/registrations/?${queryParams}`, {
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
     },
 
     method: 'GET',
   });
 
-  const { registrations } = JSON.parse(await res.text());
+  const response = JSON.parse(await res.text());
+
+  if (!response.success) {
+    // autorização falhou
+    await localStorage.removeItem('@comejaca:login');
+    window.location.pathname = 'form.html';
+  }
+
+  const { registrations } = response;
 
   let html = '';
 
