@@ -1,6 +1,6 @@
 const authConfig = {
   jwt: {
-    expiresIn: '30d',
+    expiresIn: '30m',
     secret: `${process.env.SECRET}`,
   },
   config_path: `${__dirname}`,
