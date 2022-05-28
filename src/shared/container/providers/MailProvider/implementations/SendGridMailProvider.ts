@@ -9,9 +9,13 @@ class SendGridMailProvider implements IMailProvider {
   constructor() {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   }
-  public async sendMail({ from, to, subject, html }: ISendMailDTO) {
+  public async sendMail({ from, to, subject, html, cc }: ISendMailDTO) {
+
+
+    
     const message = {
-      to,
+      to,  
+      cc,
       from,
       subject,
       html,
