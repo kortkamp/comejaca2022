@@ -93,7 +93,7 @@ async function submitForm(event) {
   if (!response.success) {
     window.alert(response.message);
   } else {
-    window.location.pathname = `confirmacao_inscricao.html?name=${window.btoa(
+    window.location = `confirmacao_inscricao.html?name=${window.btoa(
       inscricao.nome_completo,
     )}`;
   }
