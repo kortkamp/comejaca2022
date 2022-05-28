@@ -104,6 +104,10 @@ input {
   max-width: 100%;
 }
 
+#outras_informacoes {
+  width: 20px;
+}
+
 label {
   font-weight: bold;
 }
