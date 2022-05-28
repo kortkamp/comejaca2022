@@ -23,7 +23,7 @@ const schema = {
   comissao: Joi.string().max(100).allow(''),
   gfe: Joi.string().min(1).max(100),
   incluir_camisa: Joi.string().valid('S', 'N'),
-  tamanho_camisa: Joi.string().min(1).max(100),
+  tamanho_camisa: Joi.string().max(100).allow(null, ''),
 
   tempo_instituicao: Joi.string().min(1).max(100).required(),
   nome_instituicao: Joi.string().min(3).max(100).required(),

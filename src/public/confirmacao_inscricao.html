@@ -20,7 +20,7 @@
     </header>
 
     <section>
-        <b>Parabéns</b> [NOME DO USUARIO] ! <br>
+        <b>Parabéns <span class="name"></span></b> ! <br>
         <br>Enviamos um e-mail para você com o passo-a-passo para confirmar sua inscrição. <br> <br>
         <br> <br><br> <br><br>
         <p style="font-size: 12px;">Clique em VOLTAR para realizar inscrição de outra pessoa</p><br>
@@ -52,5 +52,9 @@
 
 
 </body>
+<script>
+    const name = new URLSearchParams(window.location.search).get('name')
+    document.querySelector('.name').innerHTML = window.atob(name)
+</script>
 
 </html>
