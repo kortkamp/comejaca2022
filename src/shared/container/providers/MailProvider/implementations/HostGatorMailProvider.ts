@@ -9,7 +9,7 @@ class HostGatorMailProvider implements IMailProvider {
   public async sendMail({ from, to, subject, html, cc }: ISendMailDTO) {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      name: ' brad@comejaca.org.br ',
+      name: 'brad@comejaca.org.br',
       port: 587,
       /* secure: true, */
       auth: {
