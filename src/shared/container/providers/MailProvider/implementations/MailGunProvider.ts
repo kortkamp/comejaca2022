@@ -25,7 +25,7 @@ export class MailGunProvider implements IMailProvider {
       const info = await this.mg.messages.create(this.mgDomain, data);
       logger.debug(info);
     } catch (err) {
-      logger.error('Sendgrid', err);
+      logger.error('MailGun', err);
     }
   }
 }
