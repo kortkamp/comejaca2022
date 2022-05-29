@@ -92,7 +92,7 @@ function downloadCSVFile(csv_data) {
 
   const temp_link = document.createElement('a');
 
-  temp_link.download = 'produtos.csv';
+  temp_link.download = 'inscritos_comejaca_2022.csv';
   const url = window.URL.createObjectURL(CSVFile);
   temp_link.href = url;
 
